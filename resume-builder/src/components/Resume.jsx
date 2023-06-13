@@ -30,7 +30,7 @@ const Resume = () => {
       </ReactToPdf> */}
       <div ref={ref} id="container">
         <div id="profile">
-          <div id="image">
+          {/* <div id="image">
             <img
               id="profile-photo"
               src="http://mnnit.ac.in/ss/images/shashank.jpg"
@@ -39,7 +39,7 @@ const Resume = () => {
             <a href="#">
               <i className="fas fa-pen stroke-transparent"></i>
             </a>
-          </div>
+          </div> */}
           <p id="name">
             Shashank Srivastava
             <br />
