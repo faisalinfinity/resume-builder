@@ -51,7 +51,14 @@
   color: white;
 }
 
-.second div {
+.second>div {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 20px;
+  font-weight: bold;
+}
+.second>div>div{
   display: flex;
   flex-direction: column;
   padding: 2rem;

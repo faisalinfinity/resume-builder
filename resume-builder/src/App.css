@@ -1,0 +1,35 @@
+#link-lists{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    height: 200px;
+    gap: 10px;
+}
+#link-lists>div{
+    border: 1px solid teal;
+    padding: 10px;
+    height: 50px;
+    border-radius: 10px;
+    color: teal;
+   position: relative;
+}
+#cut{
+    position: absolute;
+    top: -8px;
+    color: rgb(239, 32, 32);
+    border: 1px solid rgb(239, 32, 32) ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    right: -5px;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    background-color: white;
+
+}
+#cut:hover{
+   background-color:rgb(239, 32, 32) ; 
+   color: white;
+
+}

@@ -2,10 +2,10 @@ import { useRef } from "react";
 import "../styles/resume.css";
 import ReactToPdf from "react-to-pdf";
 import { useSelector } from "react-redux";
-const Resume = () => {
+const Resume = ({ref1}) => {
   const ref = useRef();
 
-  const { name, phone, email, jobTitle, links, about, skills ,address,more} = useSelector(
+  const {name,phone,email,jobTitle,links,about,skills,address,more} = useSelector(
     (state) => state
   );
 
@@ -22,7 +22,7 @@ const Resume = () => {
   };
   return (
     <>
-      {/* <ReactToPdf
+      <ReactToPdf
         options={options}
         scale={1}
         targetRef={ref}
@@ -33,9 +33,9 @@ const Resume = () => {
             Generate PDF
           </button>
         )}
-      </ReactToPdf> */}
+      </ReactToPdf>
       <div ref={ref} id="container">
-        <div id="profile">
+        <div ref={ref1} id="profile">
           {/* <div id="image">
             <img
               id="profile-photo"
@@ -104,12 +104,12 @@ const Resume = () => {
               ))}
             </p>
           </p>
-          {more?.map((el,i)=>{
+          {more?.map((e,i)=>{
             return   <p key={i} className="more">
-            Skills
+           {e.title}
               <br />
               <p className="more-details">
-                {skills.map((el, i) => (
+                {e.items.map((el, i) => (
                   <p key={i}>{el}</p>
                 ))}
               </p>

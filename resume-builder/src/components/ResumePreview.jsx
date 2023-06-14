@@ -3,7 +3,7 @@ import React, { useRef } from 'react';
 import ReactToPdf from 'react-to-pdf';
 import Resume from './Resume';
 
-const ResumePreview = () => {
+const ResumePreview = ({ref1}) => {
   const previewRef = useRef();
 
   const options = {
@@ -14,7 +14,7 @@ const ResumePreview = () => {
 
   return (
       <div  className="resume-container" ref={previewRef}>
-      <Resume/>
+      <Resume ref1={ref1} />
       </div>
   
   );

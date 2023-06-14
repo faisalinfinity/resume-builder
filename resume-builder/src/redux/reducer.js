@@ -20,7 +20,7 @@ const initialState = {
       institute: "Dummy Institute",
       course: "Dummy Course",
       startYear: "2018",
-      endYearL: "2019",
+      endYear: "2019",
     },
   ],
   workExp: [
@@ -43,7 +43,7 @@ const initialState = {
     },
   ],
   skills: ["Javascipt","React","Typescript"],
-  more:[]
+  more:[{title:"Interest",items:["Cricket","Tech"]}]
 
 };
 
