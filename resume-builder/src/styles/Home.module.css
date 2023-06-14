@@ -3,7 +3,7 @@
   height: 800px;
   border: 1px solid black;
   display: grid;
-  grid-template-columns: 30% 30% 40%;
+  grid-template-columns: 20% 35% 45%;
 }
 
 .first {
@@ -13,7 +13,12 @@
 
 .second {
   border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   height: 100%;
+  padding: 4%;
 }
 .menu {
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
@@ -21,7 +26,9 @@
     rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   width: 50%;
   margin: auto;
-  height: 100%;
+  border-radius: 20px;
+  margin-top: 20px;
+  height: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,6 +58,13 @@
   gap: 20px;
   font-weight: bold;
 }
+.second > div {
+  border-radius: 20px;
+  width: 80%;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+}
 
 .second input {
   height: 40px;
@@ -60,4 +74,12 @@
 }
 .third {
   overflow: scroll;
+}
+.next{
+  margin-top: 10px;
+  width: 300px;
+  font-weight: bold;
+  font-size: 30px;
+  height: 60px;
+  border-radius: 20px;
 }

@@ -44,9 +44,9 @@ function App() {
         </div>
         <div className={styles.second}>
           <div>
-            <h1>
+            <h2>
               Edit  personal details
-            </h1>
+            </h2>
             <div>
               <label htmlFor=""> Full name</label>
               <input type="text" />
@@ -60,6 +60,7 @@ function App() {
               <input type="text" />
             </div>
           </div>
+          <Button className={styles.next} size="lg">NEXT</Button>
         </div>
         <div className={styles.third}>
           <ResumePreview/>

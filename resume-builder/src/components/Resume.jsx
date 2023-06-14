@@ -1,8 +1,13 @@
 import { useRef } from "react";
 import "../styles/resume.css";
 import ReactToPdf from "react-to-pdf";
+import { useSelector } from "react-redux";
 const Resume = () => {
   const ref = useRef();
+  
+  const {name,phone,email,jobTitle}=useSelector((state)=>state)
+
+
   const options = {
     orientation: "p",
     unit: "mm",
@@ -41,16 +46,16 @@ const Resume = () => {
             </a>
           </div> */}
           <p id="name">
-            Shashank Srivastava
+          {name}
             <br />
-            <span id="email">shashank12@mnnit.ac.in</span>
+            <span id="email">{email}</span>
           </p>
           <p id="designation">
-            Assistant Professor
+            {jobTitle}
             <br />
             <span id="college">
-              Motilal Nehru National Institute of Technology, Allahabad,
-              Prayagraj, India
+              <a href="">Github</a>
+              <a href="">Github</a>
             </span>
           </p>
           <div id="social-links">
