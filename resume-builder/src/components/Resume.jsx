@@ -4,15 +4,16 @@ import ReactToPdf from "react-to-pdf";
 import { useSelector } from "react-redux";
 const Resume = () => {
   const ref = useRef();
-  
-  const {name,phone,email,jobTitle}=useSelector((state)=>state)
 
+  const { name, phone, email, jobTitle, links, about, skills ,address,more} = useSelector(
+    (state) => state
+  );
 
   const options = {
     orientation: "p",
     unit: "mm",
     format: "a2",
-    
+
     putOnlyUsedFonts: true,
     floatPrecision: 16,
     width: 200,
@@ -46,19 +47,29 @@ const Resume = () => {
             </a>
           </div> */}
           <p id="name">
-          {name}
+            {name}
             <br />
             <span id="email">{email}</span>
           </p>
           <p id="designation">
             {jobTitle}
             <br />
-            <span id="college">
-              <a href="">Github</a>
-              <a href="">Github</a>
+            <br />
+            <span id="link">
+              <a href="#">
+                <i className={`bi bi-phone`}></i>
+                {phone}
+              </a>
+              {links.map((el, i) => (
+                <a key={i} href={el?.link}>
+                  <i className={`bi bi-${el?.title.toLowerCase()}`}></i>
+                  {el?.title}
+                </a>
+              ))}
+              <p>Address : <span>{address}</span></p>
             </span>
           </p>
-          <div id="social-links">
+          {/* <div id="social-links">
             <a href="#">
               <i className="fab fa-facebook-f stroke-transparent"></i>
             </a>
@@ -71,10 +82,8 @@ const Resume = () => {
             <a>
               <i className="fab fa-github stroke-transparent"></i>
             </a>
-          </div>
-          <a id="edit-intro" href="#">
-            <i className="fas fa-pen-alt blue"></i>&nbsp;&nbsp;Edit Intro
-          </a>
+          </div> */}
+
           <hr width="100%" />
           <div id="about">
             <p style={{ display: "inline" }}>About</p>
@@ -82,19 +91,31 @@ const Resume = () => {
               <i className="fas fa-pen stroke-transparent-blue"></i>
             </a>
           </div>
-          <p id="year-graduation">
-            Expected Year of Graduation
+          <p id="summary">
+            {about}
             <br />
-            <strong>March, 2014</strong>
           </p>
-          <p id="education">
-            Education
+          <p id="skills">
+          Skills
             <br />
-            <strong>
-              Doctorate, Indian Institute of Information Technology-Allahabad
-            </strong>
+            <p className="skill-details">
+              {skills.map((el, i) => (
+                <p key={i}>{el}</p>
+              ))}
+            </p>
           </p>
-          <p id="more-about">
+          {more?.map((el,i)=>{
+            return   <p key={i} className="more">
+            Skills
+              <br />
+              <p className="more-details">
+                {skills.map((el, i) => (
+                  <p key={i}>{el}</p>
+                ))}
+              </p>
+            </p>
+          })}
+          {/* <p id="more-about">
             More about me
             <br />
             <span>DUGC of Computer Science & Engineering Department</span>
@@ -108,7 +129,7 @@ const Resume = () => {
             Fax
             <br />
             <strong>+91-532-25453441</strong>
-          </p>
+          </p> */}
         </div>
         <div id="info-cards">
           <div className="card">
