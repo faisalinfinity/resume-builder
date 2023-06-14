@@ -2,12 +2,9 @@ import { useRef } from "react";
 import "../styles/resume.css";
 import ReactToPdf from "react-to-pdf";
 import { useSelector } from "react-redux";
-const Resume = ({ref1}) => {
-  const ref = useRef();
-
-  const {name,phone,email,jobTitle,links,about,skills,address,more} = useSelector(
-    (state) => state
-  );
+const Resume = ({ ref1, ref2,ref3 }) => {
+  const { name, phone, email, jobTitle, links, about, skills, address, more } =
+    useSelector((state) => state);
 
   const options = {
     orientation: "p",
@@ -25,7 +22,7 @@ const Resume = ({ref1}) => {
       <ReactToPdf
         options={options}
         scale={1}
-        targetRef={ref}
+        targetRef={ref3}
         filename="document.pdf"
       >
         {({ toPdf }) => (
@@ -34,7 +31,7 @@ const Resume = ({ref1}) => {
           </button>
         )}
       </ReactToPdf>
-      <div ref={ref} id="container">
+      <div ref={ref3} id="container">
         <div ref={ref1} id="profile">
           {/* <div id="image">
             <img
@@ -66,7 +63,9 @@ const Resume = ({ref1}) => {
                   {el?.title}
                 </a>
               ))}
-              <p>Address : <span>{address}</span></p>
+              <p>
+                Address : <span>{address}</span>
+              </p>
             </span>
           </p>
           {/* <div id="social-links">
@@ -96,7 +95,7 @@ const Resume = ({ref1}) => {
             <br />
           </p>
           <p id="skills">
-          Skills
+            Skills
             <br />
             <p className="skill-details">
               {skills.map((el, i) => (
@@ -104,16 +103,18 @@ const Resume = ({ref1}) => {
               ))}
             </p>
           </p>
-          {more?.map((e,i)=>{
-            return   <p key={i} className="more">
-           {e.title}
-              <br />
-              <p className="more-details">
-                {e.items.map((el, i) => (
-                  <p key={i}>{el}</p>
-                ))}
+          {more?.map((e, i) => {
+            return (
+              <p key={i} className="more">
+                {e.title}
+                <br />
+                <p className="more-details">
+                  {e.items.map((el, i) => (
+                    <p key={i}>{el}</p>
+                  ))}
+                </p>
               </p>
-            </p>
+            );
           })}
           {/* <p id="more-about">
             More about me
@@ -131,8 +132,8 @@ const Resume = ({ref1}) => {
             <strong>+91-532-25453441</strong>
           </p> */}
         </div>
-        <div id="info-cards">
-          <div className="card">
+        <div  id="info-cards">
+          <div ref={ref2} className="card">
             <p>
               <i className="fas fa-br/iefcase stroke-transparent"></i>
               &nbsp;&nbsp;&nbsp;Work Experience

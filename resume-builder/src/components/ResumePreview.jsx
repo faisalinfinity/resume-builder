@@ -3,18 +3,11 @@ import React, { useRef } from 'react';
 import ReactToPdf from 'react-to-pdf';
 import Resume from './Resume';
 
-const ResumePreview = ({ref1}) => {
+const ResumePreview = ({ref1,ref2,ref3}) => {
   const previewRef = useRef();
-
-  const options = {
-    scale: 0.5, // Adjust the scale value as needed
-    filename: 'resume.pdf',
-    // ... other options if required
-  };
-
   return (
       <div  className="resume-container" ref={previewRef}>
-      <Resume ref1={ref1} />
+      <Resume ref1={ref1} ref2={ref2} ref3={ref3} />
       </div>
   
   );

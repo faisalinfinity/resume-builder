@@ -1,0 +1,11 @@
+export const SET_NAME="setname"
+export const SET_EMAIL="setemail"
+export const SET_PHONE="setphone"
+export const SET_JOB="setjob"
+export const SET_ADDRESS="setaddress"
+
+export const SET_ABOUT="setabout"
+export const SET_SOCIAL="setsocial"
+export const SET_SKILLS="setskills"
+export const SET_EDUCATION="seteducation"
+export const SET_EXP="setexp"

@@ -1,3 +1,16 @@
+import {
+  SET_ABOUT,
+  SET_ADDRESS,
+  SET_EDUCATION,
+  SET_EMAIL,
+  SET_EXP,
+  SET_JOB,
+  SET_NAME,
+  SET_PHONE,
+  SET_SKILLS,
+  SET_SOCIAL,
+} from "./actioonType";
+
 const initialState = {
   name: "Your Name",
   email: "youremail@gmail.com",
@@ -14,7 +27,8 @@ const initialState = {
     },
   ],
   address: "xyz street , London",
-  about: "Describe yourself iseijlsn  eoroeio;i dsofo;iofdo;siofiop eorop ieowiroio erif kdkljfkj fg jdfkgildf ilkgjk lgjlkfjlj fjfdgj kdjgkl jdfklj gkj dkljgjgklfjd kljg kljfdkl gjklfjdk lgjfdj gk ljdflj gkfk gkdjg",
+  about:
+    "Describe yourself iseijlsn  eoroeio;i dsofo;iofdo;siofiop eorop ieowiroio erif kdkljfkj fg jdfkgildf ilkgjk lgjlkfjlj fjfdgj kdjgkl jdfklj gkj dkljgjgklfjd kljg kljfdkl gjklfjdk lgjfdj gk ljdflj gkfk gkdjg",
   education: [
     {
       institute: "Dummy Institute",
@@ -42,15 +56,77 @@ const initialState = {
       endYear: "",
     },
   ],
-  skills: ["Javascipt","React","Typescript"],
-  more:[{title:"Interest",items:["Cricket","Tech"]}]
-
+  skills: ["Javascipt", "React", "Typescript"],
+  more: [{ title: "Interest", items: ["Cricket", "Tech"] }],
 };
 
 export const reducer = (state = initialState, action) => {
   const { payload, type } = action;
 
   switch (type) {
+    case SET_NAME: {
+      return {
+        ...state,
+        name: payload,
+      };
+    }
+    case SET_EMAIL: {
+      return {
+        ...state,
+        email: payload,
+      };
+    }
+
+    case SET_PHONE: {
+      return {
+        ...state,
+        phone: payload,
+      };
+    }
+
+    case SET_ADDRESS: {
+      return {
+        ...state,
+        address: payload,
+      };
+    }
+    case SET_JOB: {
+      return {
+        ...state,
+        jobTitle: payload,
+      };
+    }
+
+    case SET_ABOUT: {
+      return {
+        ...state,
+        about: payload,
+      };
+    }
+    case SET_SOCIAL: {
+      return {
+        ...state,
+        links: [...state.links, payload],
+      };
+    }
+    case SET_SKILLS: {
+      return {
+        ...state,
+        skills: [...state.skills, payload],
+      };
+    }
+    case SET_EDUCATION: {
+      return {
+        ...state,
+        education: [...state.education, payload],
+      };
+    }
+    case SET_EXP: {
+      return {
+        ...state,
+        workExp: [...state.workExp, payload],
+      };
+    }
     default: {
       return state;
     }
