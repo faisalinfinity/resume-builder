@@ -1,4 +1,4 @@
-import { SET_ABOUT, SET_ADDRESS, SET_EDUCATION, SET_EMAIL, SET_EXP, SET_JOB, SET_NAME, SET_PHONE, SET_SKILLS, SET_SOCIAL } from "./actioonType"
+import { DELETE_EDU, DELETE_EXP, DELETE_SKILLS, DELETE_SOCIAL, SET_ABOUT, SET_ADDRESS, SET_EDUCATION, SET_EMAIL, SET_EXP, SET_JOB, SET_NAME, SET_PHONE, SET_SKILLS, SET_SOCIAL } from "./actioonType"
 
 export const setName=(payload)=>{
     return {
@@ -65,5 +65,33 @@ export const setExp=(payload)=>{
     return {
         type:SET_EXP,
         payload:payload
+    }
+}
+
+export const deleteSkills=(id)=>{
+       return{
+        type:DELETE_SKILLS,
+        payload:id
+       }
+}
+
+export const deleteEdu=(id)=>{
+    return{
+     type:DELETE_EDU,
+     payload:id
+    }
+}
+
+export const deleteExp=(id)=>{
+    return{
+     type:DELETE_EXP,
+     payload:id
+    }
+}
+
+export const deleteSocial=(id)=>{
+    return{
+     type:DELETE_SOCIAL,
+     payload:id
     }
 }

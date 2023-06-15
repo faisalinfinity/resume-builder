@@ -1,4 +1,8 @@
 import {
+  DELETE_EDU,
+  DELETE_EXP,
+  DELETE_SKILLS,
+  DELETE_SOCIAL,
   SET_ABOUT,
   SET_ADDRESS,
   SET_EDUCATION,
@@ -18,10 +22,12 @@ const initialState = {
   phone: "7867655XXX",
   links: [
     {
+      id: 1,
       title: "Github",
       link: "xyx.com",
     },
     {
+      id: 2,
       title: "Linkedin",
       link: "xyz.com",
     },
@@ -56,7 +62,7 @@ const initialState = {
       endYear: "",
     },
   ],
-  skills: ["Javascipt", "React", "Typescript"],
+  skills: [{ id: 1, title: "Javascript" }],
   more: [{ title: "Interest", items: ["Cricket", "Tech"] }],
 };
 
@@ -104,12 +110,44 @@ export const reducer = (state = initialState, action) => {
       };
     }
     case SET_SOCIAL: {
+      let flag = false;
+
+      let updated = state.links.map((el) => {
+        if (el.id == payload.id) {
+          flag = true;
+          return payload;
+        }
+        return el;
+      });
+
+      if (flag) {
+        return {
+          ...state,
+          links: updated,
+        };
+      }
       return {
         ...state,
         links: [...state.links, payload],
       };
     }
     case SET_SKILLS: {
+      let flag = false;
+
+      let updated = state.skills.map((el) => {
+        if (el.id == payload.id) {
+          flag = true;
+          return payload;
+        }
+        return el;
+      });
+
+      if (flag) {
+        return {
+          ...state,
+          skills: updated,
+        };
+      }
       return {
         ...state,
         skills: [...state.skills, payload],
@@ -125,6 +163,30 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         workExp: [...state.workExp, payload],
+      };
+    }
+    case DELETE_SKILLS: {
+      return {
+        ...state,
+        skills: state.skills.filter((el) => el.id != payload),
+      };
+    }
+    case DELETE_SOCIAL: {
+      return {
+        ...state,
+        links: state.links.filter((el) => el.id != payload),
+      };
+    }
+    case DELETE_EDU: {
+      return {
+        ...state,
+        education: state.education.filter((el) => el.id != payload),
+      };
+    }
+    case DELETE_EXP: {
+      return {
+        ...state,
+        workExp: state.workExp.filter((el) => el.id != payload),
       };
     }
     default: {

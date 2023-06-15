@@ -99,7 +99,7 @@ const Resume = ({ ref1, ref2,ref3 }) => {
             <br />
             <p className="skill-details">
               {skills.map((el, i) => (
-                <p key={i}>{el}</p>
+                <p key={i}>{el.title}</p>
               ))}
             </p>
           </p>

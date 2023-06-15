@@ -16,7 +16,7 @@ import Customize from "./components/Customize";
 
 function App() {
   const [count, setCount] = useState(0);
-  const [page, setPage] = useState(1);
+  const [page, setPage] = useState(4);
   const ref1 = useRef();
   const ref2 = useRef();
   const ref3 = useRef();
