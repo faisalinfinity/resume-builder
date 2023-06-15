@@ -8,7 +8,7 @@ Predefined templates and customizable styles for different resume layouts.
 Rich text editing capabilities for enhanced formatting options.
 Seamless integration with Redux for state management.
 Responsive design using Bootstrap for optimal viewing on different devices.
-Downloadable resumes in multiple formats (e.g., PDF, DOCX).
+Downloadable resumes in multiple formats (e.g., PDF).
 Installation
 Clone the repository: git clone https://github.com/faisalinfinity/resume-builder.git
 Navigate to the project directory: cd resume-builder
