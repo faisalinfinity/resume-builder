@@ -32,13 +32,6 @@ const Customize = ({ref1,ref2,ref3}) => {
             <option value="cursive"  style={{fontFamily:"cursive"}}>Cursive</option>
             <option value="monospace"  style={{fontFamily:"monospace"}}>Monospace</option>
         </select>
-        {/* <div id="link-lists">
-          {education?.map((el, i) => (
-            <div key={i}>{el.course.split(" ")[0]}
-            <span id="cut">x</span>
-            </div>
-          ))}
-        </div> */}
       </div>
     </div>
   );

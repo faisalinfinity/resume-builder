@@ -36,7 +36,7 @@ const initialState = {
   about:
     "Describe yourself iseijlsn  eoroeio;i dsofo;iofdo;siofiop eorop ieowiroio erif kdkljfkj fg jdfkgildf ilkgjk lgjlkfjlj fjfdgj kdjgkl jdfklj gkj dkljgjgklfjd kljg kljfdkl gjklfjdk lgjfdj gk ljdflj gkfk gkdjg",
   education: [
-    {
+    {id:1,
       institute: "Dummy Institute",
       course: "Dummy Course",
       startYear: "2018",
@@ -45,6 +45,7 @@ const initialState = {
   ],
   workExp: [
     {
+      id:1,
       company: "Dummy company",
       field: "Dummy field",
       startYear: "2018",
@@ -154,12 +155,44 @@ export const reducer = (state = initialState, action) => {
       };
     }
     case SET_EDUCATION: {
+      let flag = false;
+
+      let updated = state.education.map((el) => {
+        if (el.id == payload.id) {
+          flag = true;
+          return payload;
+        }
+        return el;
+      });
+
+      if (flag) {
+        return {
+          ...state,
+          education: updated,
+        };
+      }
       return {
         ...state,
         education: [...state.education, payload],
       };
     }
     case SET_EXP: {
+      let flag = false;
+
+      let updated = state.workExp.map((el) => {
+        if (el.id == payload.id) {
+          flag = true;
+          return payload;
+        }
+        return el;
+      });
+
+      if (flag) {
+        return {
+          ...state,
+          workExp: updated,
+        };
+      }
       return {
         ...state,
         workExp: [...state.workExp, payload],

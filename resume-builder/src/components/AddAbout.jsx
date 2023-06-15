@@ -18,7 +18,6 @@ const AddAbout = () => {
           cols={10}
           type="text"
         />
-        <Button>Add</Button>
       </div>
     </div>
   );

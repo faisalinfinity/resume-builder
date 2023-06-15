@@ -9,6 +9,11 @@ const SocialAccount = () => {
   const [id, setId] = useState(Date.now());
   const [link, setLink] = useState("");
   const dispatch = useDispatch();
+  const reset=()=>{
+    setId(Date.now());
+    setLink("");
+    setTitle("");
+  }
   return (
     <div>
       <h2>Add Social Accounts </h2>
@@ -25,15 +30,17 @@ const SocialAccount = () => {
           onChange={(e) => setLink(e.target.value)}
           type="text"
         />
-        <Button  onClick={() => dispatch(setSocial({ id: id, title, link }))}>
+        <Button onClick={() => {
+          dispatch(setSocial({ id: id, title, link }))
+          reset()
+        }}>
           Add
         </Button>
-        <Button variant="danger" onClick={() =>{
-          setId(Date.now())
-          setLink("")
-          setTitle("")
-        }}>
-     Reset
+        <Button
+          variant="danger"
+          onClick={reset}
+        >
+          Reset
         </Button>
         <div id="link-lists">
           {links?.map((el, i) => (
