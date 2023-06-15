@@ -15,7 +15,7 @@ Navigate to the project directory: cd resume-builder
 Install dependencies: npm install
 Usage
 Start the development server: npm run dev
-Open your browser and visit: http://localhost:3000
+Open your browser and visit: http://localhost:5173
 Create a new resume or import an existing one.
 Customize the resume sections, such as personal information, work experience, education, skills, etc.
 Apply different styles to personalize the resume.
